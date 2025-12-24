@@ -5,6 +5,17 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>Signal Desk Labs — UK Digital Studio</title>
 
+  <meta name="description" content="Signal Desk Labs — Designing and building modern, high-performance websites with fintech-level clarity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://signaldesklabs.com/" />
+  <meta property="og:title" content="Signal Desk Labs — Premium Web Architecture" />
+  <meta property="og:description" content="UK-based digital studio. We build high-speed, high-impact websites." />
+  <meta property="og:image" content="https://signaldesklabs.com/image_6f07f0.jpg" />
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:title" content="Signal Desk Labs — Premium Web Architecture" />
+  <meta property="twitter:description" content="UK-based digital studio. We build high-speed, high-impact websites." />
+  <meta property="twitter:image" content="https://signaldesklabs.com/image_6f07f0.jpg" />
+
   <link rel="icon" type="image/png" href="favicon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -30,6 +41,27 @@
         },
       },
     };
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Signal Desk Labs",
+    "image": "https://signaldesklabs.com/SDL blk bg logo.jpg",
+    "@id": "https://signaldesklabs.com",
+    "url": "https://signaldesklabs.com",
+    "telephone": "",
+    "priceRange": "£££",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "UK",
+      "addressLocality": "UK" 
+    },
+    "sameAs": [
+      "https://www.linkedin.com/company/signaldesklabs"
+    ]
+  }
   </script>
 
   <style>
@@ -171,6 +203,16 @@
       </div>
     </section>
 
+    <div class="border-y border-white/5 bg-black/50 backdrop-blur-sm py-4 overflow-hidden relative z-20">
+        <div class="flex gap-16 items-center justify-center opacity-30 grayscale hover:grayscale-0 transition-all duration-500">
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase">Next.js</span>
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase">Tailwind</span>
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase">Vercel</span>
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase">React</span>
+            <span class="text-[10px] font-black tracking-[0.3em] uppercase">Figma</span>
+        </div>
+    </div>
+
     <section id="work" class="py-20 px-6">
       <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-center gap-10">
           
@@ -183,13 +225,13 @@
             <div class="absolute inset-0 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 bg-[url('shore.png')] bg-cover bg-center opacity-30 group-hover:opacity-50"></div>
           </a>
           
-          <a href="https://www.haloandsilk.co.uk/" class="reveal tilt-card group relative w-full md:w-1/2 aspect-[4/3] bg-[#080808] rounded-3xl overflow-hidden border border-white/5 cursor-pointer block">
+          <a href="https://haloandsilk.co.uk/" class="reveal delay-200 tilt-card group relative w-full md:w-1/2 aspect-[4/3] bg-[#080808] rounded-3xl overflow-hidden border border-white/5 cursor-pointer block">
             <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-10"></div>
             <div class="absolute bottom-8 left-8 z-20">
-                <span class="text-accent font-black uppercase tracking-widest text-[9px] mb-2 block tracking-[0.5em]">02 / Spa</span>
+                <span class="text-accent font-black uppercase tracking-widest text-[9px] mb-2 block tracking-[0.5em]">02 / Retail</span>
                 <h3 class="text-3xl font-black italic uppercase tracking-tighter">Halo & Silk</h3>
             </div>
-            <div class="absolute inset-0 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 bg-[url('halo.png')] bg-cover bg-center opacity-30 group-hover:opacity-50"></div>
+             <div class="absolute inset-0 grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000 bg-[url('halo.png')] bg-cover bg-center opacity-30 group-hover:opacity-50"></div>
           </a>
       </div>
     </section>
@@ -294,8 +336,25 @@
     </section>
   </main>
 
-  <footer class="py-12 border-t border-white/5 text-center opacity-30 relative z-10">
-    <p class="font-black italic uppercase tracking-widest text-xs">Signal Desk Labs &copy; 2025 // End Transmission</p>
+  <footer class="py-12 border-t border-white/5 bg-black z-10 relative">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        
+        <p class="font-black italic uppercase tracking-widest text-[10px] text-white/30">
+            Signal Desk Labs &copy; 2025
+        </p>
+
+        <div class="text-right flex flex-col gap-1">
+            <p class="font-bold uppercase tracking-widest text-[8px] text-white/20">
+                Signal Desk Labs is a trading name of B Griz
+            </p>
+            <p class="font-bold uppercase tracking-widest text-[8px] text-white/20">
+                Based in London
+            </p>
+            <div class="flex gap-4 justify-end mt-2">
+                <a href="#" class="font-bold uppercase tracking-widest text-[8px] text-white/40 hover:text-accent transition-colors">Privacy</a>
+            </div>
+        </div>
+    </div>
   </footer>
 
   <script>
