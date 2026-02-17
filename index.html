@@ -4,6 +4,8 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>SDL | Professional One-Page Websites for Local Experts</title>
+    <link rel="icon" type="image/png" href="sdl-logo.png">
+    <link rel="apple-touch-icon" href="sdl-logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
@@ -36,6 +38,10 @@
         }
         .nav-blur { backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, 0.9); }
         .shadow-premium { box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08); }
+
+        /* Added: improves <details> marker without changing layout */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
     </style>
 </head>
 <body class="bg-white text-zinc-900 font-sans antialiased">
@@ -64,8 +70,11 @@
         <section class="relative pt-48 pb-32 overflow-hidden">
             <div class="absolute inset-0 hero-pattern -z-10"></div>
             <div class="max-w-7xl mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
+                <!-- UPDATED: was lg:grid-cols-2 (created empty whitespace). Now proper 12-col grid with right panel -->
+                <div class="grid lg:grid-cols-12 gap-16 items-center">
+
+                    <!-- UPDATED: left column span -->
+                    <div class="lg:col-span-7">
                         <div class="inline-flex items-center gap-2 px-4 py-2 bg-brand-yellow rounded-full text-brand-dark font-black text-[10px] uppercase tracking-[0.2em] mb-8 shadow-sm">
                             Live in 48 Hours • No Long Contracts
                         </div>
@@ -91,7 +100,98 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- UPDATED: premium 3-step cards (less boring) -->
+                        <div class="mt-12 grid md:grid-cols-3 gap-6 max-w-3xl">
+                          <div class="p-7 rounded-[2rem] border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 shadow-premium hover:-translate-y-1 hover:border-brand-yellow transition-all">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3">Step 1</p>
+                            <span class="material-symbols-outlined text-brand-dark mb-3">edit_note</span>
+                            <p class="font-extrabold text-brand-dark">Send your details</p>
+                            <p class="text-sm text-zinc-600 mt-2">Fill the form with your services, area, and contact info.</p>
+                          </div>
+                          <div class="p-7 rounded-[2rem] border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 shadow-premium hover:-translate-y-1 hover:border-brand-yellow transition-all">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3">Step 2</p>
+                            <span class="material-symbols-outlined text-brand-dark mb-3">rocket_launch</span>
+                            <p class="font-extrabold text-brand-dark">We build it</p>
+                            <p class="text-sm text-zinc-600 mt-2">You’ll get a first draft fast with one revision included.</p>
+                          </div>
+                          <div class="p-7 rounded-[2rem] border border-zinc-200 bg-gradient-to-b from-white to-zinc-50 shadow-premium hover:-translate-y-1 hover:border-brand-yellow transition-all">
+                            <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-3">Step 3</p>
+                            <span class="material-symbols-outlined text-brand-dark mb-3">public</span>
+                            <p class="font-extrabold text-brand-dark">Go live</p>
+                            <p class="text-sm text-zinc-600 mt-2">We connect your domain + publish within 48 hours.</p>
+                          </div>
+                        </div>
+                        <!-- /UPDATED: premium 3-step cards -->
                     </div>
+
+                    <!-- ADDED: right column panel to remove white space and add trust/features -->
+                    <div class="lg:col-span-5">
+    <div class="bg-white rounded-[3rem] border border-zinc-200 shadow-premium overflow-hidden sticky top-28">
+        <div class="p-10 pb-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 bg-zinc-100 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400 mb-6">
+                Standard with SDL
+            </div>
+            <h4 class="font-heading font-extrabold text-3xl text-brand-dark tracking-tighter leading-tight">
+                Built to turn visitors into <span class="underline decoration-brand-yellow decoration-8 underline-offset-4">clients.</span>
+            </h4>
+            <p class="mt-6 text-zinc-500 text-sm leading-relaxed">
+                We don't just build pages; we build conversion tools specifically designed for local experts.
+            </p>
+        </div>
+
+        <div class="px-10 space-y-4">
+            <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-zinc-50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-brand-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-brand-yellow text-2xl">call</span>
+                </div>
+                <div>
+                    <p class="text-sm font-black uppercase tracking-tight text-brand-dark leading-none">Click-to-Call</p>
+                    <p class="text-[11px] text-zinc-400 mt-1">Mobile-ready buttons that drive enquiries.</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-zinc-50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-brand-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-brand-yellow text-2xl">map</span>
+                </div>
+                <div>
+                    <p class="text-sm font-black uppercase tracking-tight text-brand-dark leading-none">Live Google Map</p>
+                    <p class="text-[11px] text-zinc-400 mt-1">Show local clients exactly where you operate.</p>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-4 p-4 rounded-2xl hover:bg-zinc-50 transition-colors group">
+                <div class="w-12 h-12 rounded-xl bg-brand-dark flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+                    <span class="material-symbols-outlined text-brand-yellow text-2xl">bolt</span>
+                </div>
+                <div>
+                    <p class="text-sm font-black uppercase tracking-tight text-brand-dark leading-none">48-Hour Delivery</p>
+                    <p class="text-[11px] text-zinc-400 mt-1">From submission to live URL in two days.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="m-6 mt-8 p-8 rounded-[2.5rem] bg-brand-dark text-white shadow-xl relative overflow-hidden">
+            <span class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-white/5 rotate-12">verified_user</span>
+            
+            <p class="text-[10px] font-black uppercase tracking-[0.2em] text-brand-yellow mb-3">The SDL Guarantee</p>
+            <div class="space-y-2">
+                <p class="text-xs font-bold flex items-center gap-2">
+                    <span class="w-1 h-1 bg-brand-yellow rounded-full"></span> No long-term contracts
+                </p>
+                <p class="text-xs font-bold flex items-center gap-2">
+                    <span class="w-1 h-1 bg-brand-yellow rounded-full"></span> One free revision included
+                </p>
+                <p class="text-xs font-bold flex items-center gap-2">
+                    <span class="w-1 h-1 bg-brand-yellow rounded-full"></span> Cancel hosting anytime
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+                    <!-- /ADDED: right panel -->
+
                 </div>
             </div>
         </section>
@@ -132,6 +232,123 @@
             </div>
         </section>
 
+        <!-- Added: Why this matters section (pain -> outcome) -->
+        <section class="py-24 bg-white">
+          <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 class="text-zinc-400 font-bold uppercase tracking-[0.4em] text-xs mb-6">Why This Matters</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-extrabold text-brand-dark uppercase tracking-tighter">
+                  Google traffic is real but it needs somewhere to land.
+                </h3>
+                <p class="mt-6 text-zinc-600 text-lg leading-relaxed max-w-xl">
+                  If customers can’t find a proper website, trust drops and they often move on to the next listing.
+                  A simple site makes you look established, answers key questions fast, and drives more calls.
+                </p>
+              </div>
+
+              <div class="bg-zinc-50 p-10 rounded-[3rem] border border-zinc-200 shadow-premium">
+                <h4 class="font-black text-[10px] uppercase tracking-widest text-zinc-400 mb-6">What you get</h4>
+                <ul class="space-y-4 text-sm font-medium text-zinc-700">
+                  <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-dark">check_circle</span> A professional first impression</li>
+                  <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-dark">check_circle</span> Clear services + service area</li>
+                  <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-dark">check_circle</span> Click-to-call + contact form</li>
+                  <li class="flex items-start gap-3"><span class="material-symbols-outlined text-brand-dark">check_circle</span> A link you can add to Google instantly</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /Added: Why this matters -->
+
+        <!-- Added: Portfolio / Example Websites section (replace placeholders later) -->
+        <section class="py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-zinc-400 font-bold uppercase tracking-[0.4em] text-xs mb-6">Recent Work</h2>
+      <h3 class="text-5xl font-heading font-extrabold text-brand-dark uppercase tracking-tighter">Example Websites</h3>
+      <p class="mt-4 text-zinc-500 max-w-2xl mx-auto">High-converting sites built for local experts and specialized agencies.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <a href="https://www.propdatauk.co.uk/" target="_blank" class="group bg-zinc-50 rounded-[2.5rem] border border-zinc-200 overflow-hidden shadow-premium hover:border-brand-yellow transition-all duration-300">
+        <div class="h-52 bg-gradient-to-br from-brand-yellow/20 to-zinc-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <span class="material-symbols-outlined text-brand-dark/20 text-6xl">analytics</span>
+        </div>
+        <div class="p-8">
+          <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-2">PropTech & Data</p>
+          <h4 class="font-heading font-extrabold text-xl text-brand-dark group-hover:underline decoration-brand-yellow decoration-4 underline-offset-4">PropDataUK</h4>
+          <p class="text-sm text-zinc-600 mt-4 leading-relaxed">Real-time data intelligence and branded property reports for modern estate agents.</p>
+        </div>
+      </a>
+
+      <a href="https://www.haloandsilk.co.uk/" target="_blank" class="group bg-zinc-50 rounded-[2.5rem] border border-zinc-200 overflow-hidden shadow-premium hover:border-brand-yellow transition-all duration-300">
+        <div class="h-52 bg-gradient-to-br from-brand-yellow/20 to-zinc-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <span class="material-symbols-outlined text-brand-dark/20 text-6xl">spa</span>
+        </div>
+        <div class="p-8">
+          <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-2">Luxury Wellness</p>
+          <h4 class="font-heading font-extrabold text-xl text-brand-dark group-hover:underline decoration-brand-yellow decoration-4 underline-offset-4">Halo & Silk</h4>
+          <p class="text-sm text-zinc-600 mt-4 leading-relaxed">A tranquil Japanese head spa sanctuary focused on restorative scalp and skin rituals.</p>
+        </div>
+      </a>
+
+      <a href="https://shorerooms.co.uk/" target="_blank" class="group bg-zinc-50 rounded-[2.5rem] border border-zinc-200 overflow-hidden shadow-premium hover:border-brand-yellow transition-all duration-300">
+        <div class="h-52 bg-gradient-to-br from-brand-yellow/20 to-zinc-100 flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+            <span class="material-symbols-outlined text-brand-dark/20 text-6xl">self_improvement</span>
+        </div>
+        <div class="p-8">
+          <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400 mb-2">Healthcare Clinic</p>
+          <h4 class="font-heading font-extrabold text-xl text-brand-dark group-hover:underline decoration-brand-yellow decoration-4 underline-offset-4">ShoreRooms</h4>
+          <p class="text-sm text-zinc-600 mt-4 leading-relaxed">A coastal wellness clinic offering therapy rooms, yoga, Pilates, and specialist care.</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+        <!-- /Added: Portfolio -->
+
+<section class="py-24 bg-brand-gray/30 border-t border-zinc-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-zinc-400 font-bold uppercase tracking-[0.4em] text-xs mb-4">Client Feedback</h2>
+            <h3 class="text-4xl font-heading font-extrabold text-brand-dark uppercase tracking-tighter">What they say.</h3>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            <div class="bg-white p-10 rounded-[3rem] border border-zinc-200 shadow-premium relative">
+                <span class="material-symbols-outlined text-brand-yellow/20 text-7xl absolute top-6 right-8">format_quote</span>
+                <p class="text-zinc-600 text-lg leading-relaxed mb-8 italic relative z-10">
+                    "I only had a Facebook page before. Within 48 hours of contacting SDL, I had a professional site that I'm proud to show customers. My lead quality has gone through the roof."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-brand-yellow rounded-2xl flex items-center justify-center font-black text-brand-dark shadow-sm">MB</div>
+                    <div>
+                        <p class="font-extrabold text-brand-dark">Mark Bennett</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Owner, Bennett Plumbing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-10 rounded-[3rem] border border-zinc-200 shadow-premium relative">
+                <span class="material-symbols-outlined text-brand-yellow/20 text-7xl absolute top-6 right-8">format_quote</span>
+                <p class="text-zinc-600 text-lg leading-relaxed mb-8 italic relative z-10">
+                    "Finally, a web designer who understands that local businesses don't need 20 pages. Clean, fast, and does exactly what it says on the tin. Highly recommend."
+                </p>
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-brand-dark rounded-2xl flex items-center justify-center font-black text-brand-yellow shadow-sm">SR</div>
+                    <div>
+                        <p class="font-extrabold text-brand-dark">Sarah Rose</p>
+                        <p class="text-[10px] font-black uppercase tracking-widest text-zinc-400">Founder, Rose Yoga Studio</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Added: Pricing -->
+
         <section id="pricing" class="py-32 bg-brand-gray border-y border-zinc-200">
             <div class="max-w-7xl mx-auto px-6">
                 <div class="text-center mb-20">
@@ -167,6 +384,7 @@
                             <div class="space-y-6">
                                 <h4 class="font-black text-[10px] uppercase tracking-widest text-brand-dark border-b border-brand-yellow pb-2 inline-block">Lead Features</h4>
                                 <ul class="space-y-3 text-sm text-zinc-600 font-medium">
+                                    <!-- Fixed: removed stray '>' -->
                                     <li class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> Click-to-Call Button</li>
                                     <li class="flex items-center gap-2"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> Connected Contact Form</li>
                                 </ul>
@@ -233,6 +451,54 @@
                         </span>
                     </div>
                 </div>
+
+                <!-- Added: FAQs -->
+                <div class="mt-16 max-w-4xl mx-auto">
+                  <h4 class="text-center text-[10px] font-black uppercase tracking-[0.3em] text-zinc-400 mb-8">FAQs</h4>
+
+                  <div class="space-y-4">
+                   <details class="group bg-white rounded-2xl border border-zinc-200 p-6 hover:border-brand-yellow transition-all cursor-pointer">
+                      <summary class="cursor-pointer flex items-center justify-between font-extrabold text-brand-dark">
+                        What do you need from me to start?
+                        <span class="material-symbols-outlined text-zinc-400 group-open:rotate-180 transition-transform">expand_more</span>
+                      </summary>
+                      <p class="mt-4 text-zinc-600 text-sm leading-relaxed">
+                        Business name, services, areas you cover, best contact details, and any photos/logos you have. The more detail, the faster we can launch.
+                      </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-zinc-200 p-6 hover:border-brand-yellow transition-all cursor-pointer">
+                      <summary class="cursor-pointer flex items-center justify-between font-extrabold text-brand-dark">
+                        Can you connect my domain?
+                        <span class="material-symbols-outlined text-zinc-400 group-open:rotate-180 transition-transform">expand_more</span>
+                      </summary>
+                      <p class="mt-4 text-zinc-600 text-sm leading-relaxed">
+                        Yes — domain connection is included. If you don’t have one, we’ll recommend a simple option.
+                      </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-zinc-200 p-6 hover:border-brand-yellow transition-all cursor-pointer">
+                      <summary class="cursor-pointer flex items-center justify-between font-extrabold text-brand-dark">
+                        What counts as a “minor update” each month?
+                        <span class="material-symbols-outlined text-zinc-400 group-open:rotate-180 transition-transform">expand_more</span>
+                      </summary>
+                      <p class="mt-4 text-zinc-600 text-sm leading-relaxed">
+                        Small edits like changing a phone number, updating services text, or swapping a couple of images (up to 10 minutes/month).
+                      </p>
+                    </details>
+
+                    <details class="group bg-white rounded-2xl border border-zinc-200 p-6 hover:border-brand-yellow transition-all cursor-pointer">
+                      <summary class="cursor-pointer flex items-center justify-between font-extrabold text-brand-dark">
+                        Is there a contract?
+                        <span class="material-symbols-outlined text-zinc-400 group-open:rotate-180 transition-transform">expand_more</span>
+                      </summary>
+                      <p class="mt-4 text-zinc-600 text-sm leading-relaxed">
+                        No contracts. Hosting/support is monthly and you can cancel anytime.
+                      </p>
+                    </details>
+                  </div>
+                </div>
+                <!-- /Added: FAQs -->
             </div>
         </section>
 
@@ -270,24 +536,128 @@
                                 Send Build Request <span class="material-symbols-outlined font-bold">arrow_forward</span>
                             </button>
                             <p id="responseMsg" class="text-center text-sm font-bold mt-6 hidden"></p>
+
+                            <!-- Added: fallback contact line due to no-cors -->
+                            <p class="text-center text-xs text-zinc-400 mt-4 font-bold uppercase tracking-widest">
+                              If you don’t hear back within 1 hour, email:
+                              <a class="text-brand-dark underline" href="mailto:hello@signaldesklabs.co.uk">hello@signaldesklabs.co.uk</a>
+                            </p>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
     </main>
+<footer class="py-16 bg-brand-dark text-zinc-500 border-t border-white/5">
+  <div class="max-w-7xl mx-auto px-6">
 
-    <footer class="py-20 bg-brand-dark text-zinc-500 border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12">
-            <div class="flex items-center">
-                <img src="sdl-logow.png" alt="Signal Desk Labs" class="h-8 w-auto">
-            </div>
-            <div class="flex gap-8 text-[10px] font-bold uppercase tracking-widest">
-                <a href="#" class="hover:text-brand-yellow transition-colors">Contact</a>
-                <a href="#" class="hover:text-brand-yellow transition-colors">Privacy Policy</a>
-            </div>
+    <!-- Top Row -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-12 pb-12 border-b border-white/5">
+      <div class="flex items-center gap-4">
+        <img src="sdl-logow.png" alt="Signal Desk Labs" class="h-8 w-auto">
+        <div class="hidden sm:block">
+          <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400">Signal Desk Labs</p>
+          <p class="text-[10px] font-bold uppercase tracking-widest text-zinc-600">Websites for local businesses</p>
         </div>
-    </footer>
+      </div>
+
+      <div class="flex gap-8 text-[10px] font-black uppercase tracking-[0.2em]">
+        <a href="#specialise" class="hover:text-brand-yellow transition-colors">Who We Serve</a>
+        <a href="#pricing" class="hover:text-brand-yellow transition-colors">Pricing</a>
+        <a href="#contact" class="hover:text-brand-yellow transition-colors">Start Build</a>
+      </div>
+    </div>
+
+    <!-- Middle Row: Contact + Legal -->
+    <div class="pt-10 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+      <!-- Contact -->
+      <div>
+        <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Contact</p>
+        <ul class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+          <li>
+            <span class="text-zinc-500">Email:</span>
+            <a href="mailto:hello@signaldesklabs.co.uk" class="ml-2 underline underline-offset-4 decoration-zinc-800 hover:text-zinc-300 transition-colors">
+              hello@signaldesklabs.co.uk
+            </a>
+          </li>
+          <li>
+            <span class="text-zinc-500">Response:</span>
+            <span class="ml-2">Typically within 1 hour (business hours)</span>
+          </li>
+          <li>
+            <span class="text-zinc-500">Service area:</span>
+            <span class="ml-2">United Kingdom</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Legal Links -->
+      <div>
+        <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Legal</p>
+        <div class="flex flex-col gap-3 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+          <a href="/privacy" class="hover:text-zinc-300 transition-colors underline underline-offset-4 decoration-zinc-800">Privacy Policy</a>
+          <a href="/terms" class="hover:text-zinc-300 transition-colors underline underline-offset-4 decoration-zinc-800">Terms of Service</a>
+          <a href="/cookies" class="hover:text-zinc-300 transition-colors underline underline-offset-4 decoration-zinc-800">Cookie Policy</a>
+        </div>
+      </div>
+
+      <!-- Business Info -->
+      <div>
+        <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Business</p>
+        <ul class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+          <li><span class="text-zinc-500">Trading name:</span> <span class="ml-2">Signal Desk Labs</span></li>
+          <li><span class="text-zinc-500">VAT:</span> <span class="ml-2">Not VAT registered</span></li>
+          <li><span class="text-zinc-500">Company:</span> <span class="ml-2">Sole trader / independent studio</span></li>
+          <!-- If you are an LTD, replace the line above with:
+          <li><span class="text-zinc-500">Company no:</span> <span class="ml-2">YOUR_NUMBER</span></li>
+          <li><span class="text-zinc-500">Registered office:</span> <span class="ml-2">YOUR_REGISTERED_ADDRESS</span></li>
+          -->
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="pt-12 mt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
+      <div class="flex flex-wrap justify-center md:justify-start gap-x-8 gap-y-2">
+        <span>© 2026 Signal Desk Labs. All rights reserved.</span>
+        <span class="hidden md:inline">•</span>
+        <span>
+          By using this site you agree to our
+          <a href="/terms" class="underline underline-offset-4 decoration-zinc-800 hover:text-zinc-300 transition-colors">Terms</a>.
+        </span>
+      </div>
+    </div>
+
+    <!-- Disclaimers -->
+    <div class="mt-8 space-y-3">
+      <p class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
+        Disclaimer: The 48-hour delivery window begins once all required business information, branding and content have been provided by the client.
+        Delivery times may vary during peak demand or if revisions are requested.
+      </p>
+      <p class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
+        Hosting & support: The monthly plan covers secure hosting, maintenance and minor updates (up to 10 minutes per month). Larger changes, extra pages or new features are quoted separately.
+        Monthly hosting can be cancelled at any time.
+      </p>
+      <p class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
+        Data protection: We only use your information to respond to your enquiry and deliver your website. See our Privacy Policy for details.
+      </p>
+      <p class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
+        Cookies: We use essential cookies for basic site functionality. If analytics cookies are enabled, you can manage preferences via our Cookie Policy.
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+    <!-- Added: Mobile sticky CTA -->
+    <div class="fixed bottom-4 left-4 right-4 md:hidden z-50">
+      <a href="#contact" class="block w-full text-center bg-brand-dark text-brand-yellow py-4 rounded-2xl font-black uppercase tracking-tighter shadow-2xl">
+        Start My Build
+      </a>
+    </div>
 
     <script>
         const form = document.getElementById('enquiryForm');
@@ -325,6 +695,4 @@
         };
     </script>
 </body>
-
 </html>
-
