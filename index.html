@@ -808,9 +808,17 @@
             </div>
             <div class="space-y-2">
               <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact Number</label>
-              <input type="tel" name="phone" required
+              <input type="tel" name="phone" required pattern="[0-9\s\+\-]*" inputmode="tel"
                 class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
                 placeholder="Phone Number">
+            </div>
+            <div class="space-y-2">
+              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Target Region</label>
+              <select id="formRegionSelect" name="target_region" required
+                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none bg-white">
+                <option value="uk">🇬🇧 United Kingdom</option>
+                <option value="us">🇺🇸 United States</option>
+              </select>
             </div>
             <div class="space-y-2">
               <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact Email</label>
@@ -1120,7 +1128,12 @@
     function setRegion(region) {
       document.documentElement.setAttribute('data-region', region);
       localStorage.setItem('sdl_region', region);
-      // Optional: Refresh any dynamic state if needed
+
+      // Sync form dropdown if it exists
+      const formSelect = document.getElementById('formRegionSelect');
+      if (formSelect) {
+        formSelect.value = region;
+      }
     }
 
     // Initialize region on load
