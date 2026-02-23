@@ -13,7 +13,8 @@
   </script>
 
   <meta property="og:title" content="Signal Desk Labs – Professional Websites for Local Experts">
-  <meta property="og:description" content="Live in 48 hours. £149 build. £10/month hosting. No contracts.">
+  <meta property="og:description"
+    content="Professional one-page websites for local experts. Live in 48 hours. No long contracts.">
   <meta property="og:image" content="https://www.signaldesklabs.co.uk/sdl-logo.png">
   <meta property="og:url" content="https://www.signaldesklabs.co.uk/">
   <meta property="og:type" content="website">
@@ -92,6 +93,34 @@
       opacity: 1;
       transform: translateY(0);
     }
+
+    /* Region Switching Styles */
+    html[data-region="us"] .region-uk {
+      display: none !important;
+    }
+
+    html[data-region="uk"] .region-us {
+      display: none !important;
+    }
+
+    .switcher-btn {
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .switcher-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    html[data-region="uk"] .uk-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
+
+    html[data-region="us"] .us-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
   </style>
 
   <script type="application/ld+json">
@@ -129,7 +158,7 @@
       "sameAs": [
         "https://www.signaldesklabs.co.uk/"
       ],
-      "priceRange": "££"
+      "priceRange": "$$"
     }
     </script>
 </head>
@@ -138,8 +167,19 @@
 
   <header class="fixed top-0 w-full z-50 border-b border-zinc-100 nav-blur">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-      <div class="w-1/4 flex items-center">
-        <img src="sdl-logo.png" alt="Signal Desk Labs" class="h-10 w-auto rounded-lg">
+      <div class="w-1/4 flex items-center gap-3">
+        <a href="index.html" class="inline-flex items-center shrink-0">
+          <img src="sdl-logo.png" alt="Signal Desk Labs" class="h-10 w-auto rounded-lg">
+        </a>
+        <div
+          class="flex items-center bg-zinc-100 rounded-full p-1 text-[9px] font-black uppercase shadow-sm border border-zinc-200/50">
+          <button onclick="setRegion('uk')"
+            class="uk-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇬🇧 <span
+              class="hidden sm:inline">UK</span></button>
+          <button onclick="setRegion('us')"
+            class="us-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇺🇸 <span
+              class="hidden sm:inline">US</span></button>
+        </div>
       </div>
 
       <nav class="hidden md:flex flex-1 justify-center items-center gap-10">
@@ -193,12 +233,18 @@
                 class="flex items-center gap-4 px-6 py-4 border-2 border-brand-yellow rounded-2xl bg-white shadow-sm">
                 <div class="text-left">
                   <p class="text-[10px] font-black uppercase text-zinc-400 leading-none mb-1">Total Setup</p>
-                  <p class="text-2xl font-heading font-extrabold text-brand-dark">£149</p>
+                  <p class="text-2xl font-heading font-extrabold text-brand-dark">
+                    <span class="region-uk">£149</span>
+                    <span class="region-us">$299</span>
+                  </p>
                 </div>
                 <div class="w-px h-8 bg-zinc-200"></div>
                 <div class="text-left">
                   <p class="text-[10px] font-black uppercase text-zinc-400 leading-none mb-1">Ongoing</p>
-                  <p class="text-2xl font-heading font-extrabold text-brand-dark">£10/mo</p>
+                  <p class="text-2xl font-heading font-extrabold text-brand-dark">
+                    <span class="region-uk">£10/mo</span>
+                    <span class="region-us">$25/mo</span>
+                  </p>
                 </div>
               </div>
             </div>
@@ -545,7 +591,10 @@
               <span class="material-symbols-outlined text-6xl text-brand-yellow/20">auto_awesome</span>
             </div>
             <p class="text-[10px] font-black uppercase text-zinc-400 mb-4 tracking-widest">Starter Website Build</p>
-            <div class="text-7xl font-heading font-extrabold text-brand-dark mb-2">£149</div>
+            <div class="text-7xl font-heading font-extrabold text-brand-dark mb-2">
+              <span class="region-uk">£149</span>
+              <span class="region-us">$299</span>
+            </div>
             <p class="text-xs font-bold text-zinc-500 uppercase mb-12 italic">One-Time Setup Fee</p>
 
             <div class="grid md:grid-cols-2 gap-8">
@@ -608,8 +657,10 @@
           <div class="bg-brand-dark p-10 md:p-16 rounded-[3rem] text-white shadow-2xl flex flex-col justify-between">
             <div>
               <p class="text-brand-yellow font-black uppercase text-[10px] mb-4 tracking-widest">Hosting & Support</p>
-              <div class="text-7xl font-heading font-extrabold text-white mb-2">£10<span
-                  class="text-2xl opacity-40">/mo</span></div>
+              <div class="text-7xl font-heading font-extrabold text-white mb-2">
+                <span class="region-uk">£10<span class="text-2xl opacity-40">/mo</span></span>
+                <span class="region-us">$25<span class="text-2xl opacity-40">/mo</span></span>
+              </div>
               <p class="text-xs font-bold text-zinc-400 uppercase mb-12 italic">Recurring Base</p>
 
               <h4
@@ -845,7 +896,8 @@
             </li>
             <li>
               <span class="text-zinc-500">Service area:</span>
-              <span class="ml-2">United Kingdom</span>
+              <span class="ml-2 region-uk">United Kingdom</span>
+              <span class="ml-2 region-us">United States</span>
             </li>
           </ul>
         </div>
@@ -908,7 +960,9 @@
         <p
           class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
           Hosting & support: The monthly plan covers secure hosting, maintenance and minor updates (up to 10 minutes per
-          month). Larger changes, extra pages or new features are quoted separately.
+          month).
+          (<span class="region-uk">£10/mo</span><span class="region-us">$25/mo</span>)
+          Larger changes, extra pages or new features are quoted separately.
           Monthly hosting can be cancelled at any time.
         </p>
         <p
@@ -1060,6 +1114,19 @@
     window.addEventListener('load', () => {
       const reveals = document.querySelectorAll('.reveal');
       reveals.forEach(el => observer.observe(el));
+    });
+
+    // Region Switcher Logic
+    function setRegion(region) {
+      document.documentElement.setAttribute('data-region', region);
+      localStorage.setItem('sdl_region', region);
+      // Optional: Refresh any dynamic state if needed
+    }
+
+    // Initialize region on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedRegion = localStorage.getItem('sdl_region') || 'uk';
+      setRegion(savedRegion);
     });
   </script>
 

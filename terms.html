@@ -71,6 +71,34 @@
     .shadow-premium {
       box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
     }
+
+    /* Region Switching Styles */
+    html[data-region="us"] .region-uk {
+      display: none !important;
+    }
+
+    html[data-region="uk"] .region-us {
+      display: none !important;
+    }
+
+    .switcher-btn {
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .switcher-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    html[data-region="uk"] .uk-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
+
+    html[data-region="us"] .us-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
   </style>
 </head>
 
@@ -80,10 +108,19 @@
   <header class="fixed top-0 w-full z-50 border-b border-zinc-100 nav-blur">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-      <div class="flex items-center">
+      <div class="flex items-center gap-3">
         <a href="index.html" class="inline-flex items-center">
           <img src="sdl-logo.png" alt="Signal Desk Labs" class="h-10 w-auto rounded-lg">
         </a>
+        <div
+          class="flex items-center bg-zinc-100 rounded-full p-1 text-[9px] font-black uppercase shadow-sm border border-zinc-200/50">
+          <button onclick="setRegion('uk')"
+            class="uk-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇬🇧 <span
+              class="hidden sm:inline">UK</span></button>
+          <button onclick="setRegion('us')"
+            class="us-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇺🇸 <span
+              class="hidden sm:inline">US</span></button>
+        </div>
       </div>
 
       <div class="flex items-center">
@@ -380,7 +417,11 @@
                 signaldesklabs@gmail.com
               </a>
             </li>
-            <li><span class="text-zinc-500">Service area:</span> <span class="ml-2">United Kingdom</span></li>
+            <li>
+              <span class="text-zinc-500">Service area:</span>
+              <span class="ml-2 region-uk">United Kingdom</span>
+              <span class="ml-2 region-us">United States</span>
+            </li>
           </ul>
         </div>
 
@@ -443,6 +484,19 @@
     </div>
   </footer>
 
+  <script>
+    // Region Switcher Logic
+    function setRegion(region) {
+      document.documentElement.setAttribute('data-region', region);
+      localStorage.setItem('sdl_region', region);
+    }
+
+    // Initialize region on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedRegion = localStorage.getItem('sdl_region') || 'uk';
+      setRegion(savedRegion);
+    });
+  </script>
 </body>
 
 </html>

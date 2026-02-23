@@ -11,17 +11,17 @@
     gtag('config', 'G-YF4W3S7GF6');
   </script>
 
-  <meta property="og:title" content="Signal Desk Labs | Terms of Service">
+  <meta property="og:title" content="Signal Desk Labs | Privacy Policy">
   <meta property="og:description"
-    content="Read our terms of service for professional website builds with no long contracts.">
+    content="Your privacy is important to us. Read how Signal Desk Labs protects your data.">
   <meta property="og:image" content="https://www.signaldesklabs.co.uk/sdl-logo.png">
-  <meta property="og:url" content="https://www.signaldesklabs.co.uk/terms.html">
+  <meta property="og:url" content="https://www.signaldesklabs.co.uk/privacy.html">
   <meta property="og:type" content="website">
 
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <link rel="canonical" href="https://www.signaldesklabs.co.uk/terms.html" />
-  <title>SDL | Terms of Service</title>
+  <link rel="canonical" href="https://www.signaldesklabs.co.uk/privacy.html" />
+  <title>SDL | Privacy Policy</title>
   <link rel="icon" type="image/png" href="sdl-logo.png">
   <link rel="apple-touch-icon" href="sdl-logo.png">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -71,6 +71,34 @@
     .shadow-premium {
       box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.08);
     }
+
+    /* Region Switching Styles */
+    html[data-region="us"] .region-uk {
+      display: none !important;
+    }
+
+    html[data-region="uk"] .region-us {
+      display: none !important;
+    }
+
+    .switcher-btn {
+      transition: all 0.3s ease;
+      background: rgba(0, 0, 0, 0.05);
+    }
+
+    .switcher-btn:hover {
+      background: rgba(0, 0, 0, 0.1);
+    }
+
+    html[data-region="uk"] .uk-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
+
+    html[data-region="us"] .us-btn {
+      background: #f9f506;
+      color: #18181b;
+    }
   </style>
 </head>
 
@@ -80,10 +108,19 @@
   <header class="fixed top-0 w-full z-50 border-b border-zinc-100 nav-blur">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 
-      <div class="flex items-center">
+      <div class="flex items-center gap-3">
         <a href="index.html" class="inline-flex items-center">
           <img src="sdl-logo.png" alt="Signal Desk Labs" class="h-10 w-auto rounded-lg">
         </a>
+        <div
+          class="flex items-center bg-zinc-100 rounded-full p-1 text-[9px] font-black uppercase shadow-sm border border-zinc-200/50">
+          <button onclick="setRegion('uk')"
+            class="uk-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇬🇧 <span
+              class="hidden sm:inline">UK</span></button>
+          <button onclick="setRegion('us')"
+            class="us-btn switcher-btn px-2.5 py-1 rounded-full flex items-center gap-1.5 transition-all">🇺🇸 <span
+              class="hidden sm:inline">US</span></button>
+        </div>
       </div>
 
       <div class="flex items-center">
@@ -104,17 +141,17 @@
       <div class="max-w-4xl mx-auto px-6">
         <div
           class="inline-flex items-center gap-2 px-4 py-2 bg-brand-yellow rounded-full text-brand-dark font-black text-[10px] uppercase tracking-[0.2em] mb-8 shadow-sm">
-          Legal • Terms of Service
+          Legal • Privacy Policy
         </div>
 
         <h1 class="text-5xl md:text-6xl font-heading font-extrabold text-brand-dark leading-[0.95] tracking-tighter">
-          Terms & Conditions
+          Privacy Policy
         </h1>
 
         <p class="mt-6 text-lg text-zinc-600 leading-relaxed max-w-3xl">
-          These Terms govern the website design, hosting and support services provided by Signal Desk Labs (a UK sole
-          trader).
-          By submitting a build request or making payment, you agree to these Terms.
+          This Privacy Policy explains how Signal Desk Labs (UK sole trader) collects, uses and protects your personal
+          information
+          when you visit our website, submit an enquiry, or use our services.
         </p>
 
         <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -149,193 +186,210 @@
     <section class="py-12">
       <div class="max-w-4xl mx-auto px-6">
         <div class="bg-white rounded-[3rem] border border-zinc-200 shadow-premium overflow-hidden">
+
           <div class="p-8 md:p-12 border-b border-zinc-100">
             <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-3">Plain English</p>
             <p class="text-zinc-700 font-medium leading-relaxed">
-              We build fast, clean one-page websites. You pay the build fee upfront. Hosting/support is monthly and can
-              be cancelled anytime.
-              One revision is included. The 48-hour delivery window starts when we have everything we need from you.
+              We only collect the information we need to reply to your enquiry and deliver your website.
+              We don’t sell your personal data. If you want us to delete your data, email us and we’ll help.
             </p>
           </div>
 
           <div class="p-8 md:p-12 space-y-10">
+
             <!-- 1 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">1.
-                Introduction</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">1. Who We
+                Are</h2>
               <p class="text-zinc-600 leading-relaxed">
-                These Terms & Conditions govern the provision of website design, hosting and support services by
-                <span class="font-semibold text-brand-dark">Signal Desk Labs</span> (“we”, “us”, “our”) to the client
-                (“you”, “your”).
-                By submitting a build request or making payment, you agree to these Terms.
+                <span class="font-semibold text-brand-dark">Signal Desk Labs</span> is a UK-based sole trader providing
+                website design, hosting and support services.
+                If you have any questions about this policy or your data, contact:
+              </p>
+              <p class="mt-4 text-zinc-600 font-medium">
+                Email:
+                <a href="mailto:signaldesklabs@gmail.com"
+                  class="font-semibold text-brand-dark underline decoration-brand-yellow underline-offset-4 hover:opacity-80">
+                  signaldesklabs@gmail.com
+                </a>
               </p>
             </div>
 
             <!-- 2 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">2.
-                Services Provided</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">2. What
+                Data We Collect</h2>
               <p class="text-zinc-600 leading-relaxed mb-4">
-                Signal Desk Labs provides a streamlined website service designed for speed and affordability. Typical
-                inclusions:
+                Depending on how you interact with our website and services, we may collect:
               </p>
               <ul class="space-y-3 text-zinc-600 font-medium">
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> Your
+                  name</li>
                 <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  One-page website design</li>
+                  Business name</li>
                 <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Mobile-optimised layout</li>
+                  Email address</li>
                 <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Basic on-page SEO structure</li>
+                  Phone number</li>
                 <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Domain connection (if you own a domain)</li>
+                  Business description / service information submitted</li>
                 <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Secure hosting + SSL (with active hosting plan)</li>
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Minor monthly content updates (up to 10 minutes/month)</li>
+                  Content you provide for your website (text, images, logos)</li>
               </ul>
 
               <div class="mt-6 p-6 rounded-2xl bg-zinc-50 border border-zinc-200">
-                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2">Not included</p>
+                <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-2">Note</p>
                 <p class="text-zinc-600 text-sm leading-relaxed">
-                  E-commerce, complex integrations, custom web apps, unlimited revisions, and marketing/SEO campaigns
-                  are not included unless agreed in writing.
+                  We do not intentionally collect sensitive personal data. Please do not submit sensitive personal
+                  information via our enquiry form.
                 </p>
               </div>
             </div>
 
             <!-- 3 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">3. Payment
-                Terms</h2>
-              <div class="space-y-4 text-zinc-600 leading-relaxed">
-                <p><span class="font-semibold text-brand-dark">Website Build:</span> The build fee is payable upfront
-                  before work begins.</p>
-                <p><span class="font-semibold text-brand-dark">Hosting & Support:</span> The monthly hosting fee is
-                  billed monthly in advance. You may cancel at any time. Partial month refunds are not provided.</p>
-                <p><span class="font-semibold text-brand-dark">Non-payment:</span> If hosting fees remain unpaid, the
-                  website may be suspended until payment is resolved.</p>
-              </div>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">3. How We
+                Use Your Data</h2>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                We use your data to:
+              </p>
+              <ul class="space-y-3 text-zinc-600 font-medium">
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Respond to enquiries and provide quotes</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Deliver your website build and requested updates</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Provide hosting, maintenance and support</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Communicate about your project and service status</li>
+              </ul>
+              <p class="text-zinc-600 leading-relaxed mt-4">
+                We do not sell your personal data and we do not share it with third parties for marketing purposes.
+              </p>
             </div>
 
             <!-- 4 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">4.
-                Delivery Timeline</h2>
-              <p class="text-zinc-600 leading-relaxed">
-                The <span class="font-semibold text-brand-dark">48-hour delivery window</span> begins once full payment
-                has been received and
-                all required information, branding and content have been provided by you. Delays caused by missing
-                information,
-                slow responses, or revision requests may extend the timeline.
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">4. Legal
+                Basis for Processing</h2>
+              <p class="text-zinc-600 leading-relaxed mb-4">
+                Under UK GDPR, we rely on the following lawful bases:
               </p>
+              <ul class="space-y-3 text-zinc-600 font-medium">
+                <li class="flex gap-3">
+                  <span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  <span><span class="font-semibold text-brand-dark">Contract:</span> to deliver services you request or
+                    pay for.</span>
+                </li>
+                <li class="flex gap-3">
+                  <span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  <span><span class="font-semibold text-brand-dark">Legitimate interests:</span> to respond to enquiries
+                    and manage our business operations.</span>
+                </li>
+              </ul>
             </div>
 
             <!-- 5 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">5.
-                Revisions</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">5. Where
+                Your Data Is Stored</h2>
               <p class="text-zinc-600 leading-relaxed">
-                One revision round is included with the build. Additional revisions or changes outside the original
-                scope may
-                incur additional fees or require a separate quote.
+                Information submitted via our enquiry form and client communications may be stored securely using
+                reputable providers
+                such as email services, cloud storage, form handling tools, and web hosting platforms used to deliver
+                our services.
+              </p>
+              <p class="text-zinc-600 leading-relaxed mt-4">
+                We take reasonable technical and organisational measures to protect your data against loss, misuse,
+                unauthorised access,
+                disclosure, alteration or destruction.
               </p>
             </div>
 
             <!-- 6 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">6. Client
-                Responsibilities</h2>
-              <p class="text-zinc-600 leading-relaxed mb-4">
-                You confirm that:
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">6. How
+                Long We Keep Your Data</h2>
+              <p class="text-zinc-600 leading-relaxed">
+                We keep personal data only as long as necessary to:
               </p>
-              <ul class="space-y-3 text-zinc-600 font-medium">
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> You
-                  have the legal right to use all content, images, logos and text provided.</li>
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> Your
-                  business operates lawfully and information supplied is accurate.</li>
+              <ul class="space-y-3 text-zinc-600 font-medium mt-4">
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Respond to enquiries</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Provide services and support</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
+                  Comply with legal and accounting obligations</li>
               </ul>
-              <p class="text-zinc-600 leading-relaxed mt-4">
-                We are not responsible for copyright infringement resulting from client-provided materials.
-              </p>
             </div>
 
             <!-- 7 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">7. Refund
-                Policy</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">7. Sharing
+                Your Data</h2>
               <p class="text-zinc-600 leading-relaxed">
-                Due to the custom nature of website builds, refunds are not available once work has commenced.
-                Hosting fees are non-refundable once billed.
+                We may share your data with service providers strictly as needed to deliver our services
+                (for example: hosting platforms, domain providers, or tools used to receive and store enquiries).
+              </p>
+              <p class="text-zinc-600 leading-relaxed mt-4">
+                We do not share your personal data with third parties for their own marketing.
               </p>
             </div>
 
             <!-- 8 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">8. Hosting
-                & Support Scope</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">8. Your
+                Rights</h2>
               <p class="text-zinc-600 leading-relaxed mb-4">
-                The monthly hosting plan includes:
+                You have rights under UK GDPR, including:
               </p>
               <ul class="space-y-3 text-zinc-600 font-medium">
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Secure hosting + SSL renewal</li>
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Monitoring and basic maintenance</li>
-                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span>
-                  Minor updates (up to 10 minutes per month)</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> The
+                  right to access your personal data</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> The
+                  right to correct inaccurate data</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> The
+                  right to request deletion (where applicable)</li>
+                <li class="flex gap-3"><span class="material-symbols-outlined text-brand-dark text-lg">check</span> The
+                  right to object to or restrict processing (where applicable)</li>
               </ul>
               <p class="text-zinc-600 leading-relaxed mt-4">
-                Larger changes, additional pages, new features, or substantial rewrites are quoted separately.
+                To exercise your rights, email:
+                <a href="mailto:signaldesklabs@gmail.com"
+                  class="font-semibold text-brand-dark underline decoration-brand-yellow underline-offset-4 hover:opacity-80">
+                  signaldesklabs@gmail.com
+                </a>
               </p>
             </div>
 
             <!-- 9 -->
             <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">9.
-                Intellectual Property</h2>
+              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">9. Cookies
+              </h2>
               <p class="text-zinc-600 leading-relaxed">
-                Upon full payment, you retain rights to your business content. We retain rights to underlying templates,
-                frameworks and reusable design systems used to deliver the service.
-              </p>
-              <p class="text-zinc-600 leading-relaxed mt-3">
-                We may display completed work in our portfolio unless requested otherwise in writing.
+                We use cookies to support basic site functionality. For more details, see our
+                <a href="/cookies.html"
+                  class="font-semibold text-brand-dark underline decoration-brand-yellow underline-offset-4 hover:opacity-80">Cookie
+                  Policy</a>.
               </p>
             </div>
 
             <!-- 10 -->
             <div>
               <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">10.
-                Limitation of Liability</h2>
+                Contact & Complaints</h2>
               <p class="text-zinc-600 leading-relaxed">
-                We shall not be liable for business losses, loss of revenue or profits, indirect or consequential
-                damages,
-                or third-party service outages (hosting, domain providers, email providers, etc.).
-                Our total liability shall not exceed the total fees paid by you.
+                If you have a question or concern about this Privacy Policy, contact us first and we’ll do our best to
+                resolve it.
               </p>
-            </div>
-
-            <!-- 11 -->
-            <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">11. Right
-                to Refuse Service</h2>
-              <p class="text-zinc-600 leading-relaxed">
-                We reserve the right to refuse service to businesses operating in illegal, high-risk or restricted
-                industries.
-              </p>
-            </div>
-
-            <!-- 12 -->
-            <div>
-              <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">12.
-                Governing Law</h2>
-              <p class="text-zinc-600 leading-relaxed">
-                These Terms are governed by the laws of England and Wales.
+              <p class="text-zinc-600 leading-relaxed mt-4">
+                You also have the right to lodge a complaint with the UK Information Commissioner’s Office (ICO).
               </p>
             </div>
 
             <div class="pt-6 border-t border-zinc-100">
               <p class="text-sm text-zinc-500">
-                Questions about these Terms? Email
+                Questions about privacy? Email
                 <a href="mailto:signaldesklabs@gmail.com"
                   class="font-semibold text-brand-dark underline decoration-brand-yellow underline-offset-4 hover:opacity-80">
                   signaldesklabs@gmail.com
@@ -349,7 +403,7 @@
     </section>
   </main>
 
-  <!-- FOOTER (matches your "bullet-proof" style) -->
+  <!-- FOOTER (matches your bullet-proof style) -->
   <footer class="py-16 bg-brand-dark text-zinc-500 border-t border-white/5">
     <div class="max-w-7xl mx-auto px-6">
 
@@ -380,7 +434,11 @@
                 signaldesklabs@gmail.com
               </a>
             </li>
-            <li><span class="text-zinc-500">Service area:</span> <span class="ml-2">United Kingdom</span></li>
+            <li>
+              <span class="text-zinc-500">Service area:</span>
+              <span class="ml-2 region-uk">United Kingdom</span>
+              <span class="ml-2 region-us">United States</span>
+            </li>
           </ul>
         </div>
 
@@ -425,16 +483,6 @@
       <div class="mt-8 space-y-3">
         <p
           class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
-          Disclaimer: The 48-hour delivery window begins once all required business information, branding and content
-          have been provided by the client.
-        </p>
-        <p
-          class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
-          Hosting & support covers secure hosting, maintenance and minor updates (up to 10 minutes per month). Larger
-          changes are quoted separately.
-        </p>
-        <p
-          class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
           Data protection: We use submitted information to respond to enquiries and deliver services. See our Privacy
           Policy for details.
         </p>
@@ -443,6 +491,19 @@
     </div>
   </footer>
 
+  <script>
+    // Region Switcher Logic
+    function setRegion(region) {
+      document.documentElement.setAttribute('data-region', region);
+      localStorage.setItem('sdl_region', region);
+    }
+
+    // Initialize region on load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedRegion = localStorage.getItem('sdl_region') || 'uk';
+      setRegion(savedRegion);
+    });
+  </script>
 </body>
 
 </html>
