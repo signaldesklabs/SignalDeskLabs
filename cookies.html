@@ -77,6 +77,10 @@
       display: none !important;
     }
 
+    html[data-region="us"] .region-uk {
+      display: none !important;
+    }
+
     html[data-region="uk"] .region-us {
       display: none !important;
     }
@@ -362,8 +366,13 @@
           <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Business</p>
           <ul class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
             <li><span class="text-zinc-500">Trading name:</span> <span class="ml-2">Signal Desk Labs</span></li>
-            <li><span class="text-zinc-500">VAT:</span> <span class="ml-2">Not VAT registered</span></li>
-            <li><span class="text-zinc-500">Type:</span> <span class="ml-2">Sole trader</span></li>
+            <li class="region-uk"><span class="text-zinc-500">VAT:</span> <span class="ml-2">Not VAT registered</span>
+            </li>
+            <li>
+              <span class="text-zinc-500">Type:</span>
+              <span class="ml-2 region-uk">Sole trader</span>
+              <span class="ml-2 region-us">Freelance Professional</span>
+            </li>
           </ul>
         </div>
       </div>

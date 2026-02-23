@@ -77,6 +77,10 @@
       display: none !important;
     }
 
+    html[data-region="us"] .region-uk {
+      display: none !important;
+    }
+
     html[data-region="uk"] .region-us {
       display: none !important;
     }
@@ -191,7 +195,10 @@
             <p class="text-zinc-700 font-medium leading-relaxed">
               We build fast, clean one-page websites. You pay the build fee upfront. Hosting/support is monthly and can
               be cancelled anytime.
-              One revision is included. The 48-hour delivery window starts when we have everything we need from you.
+              <span class="region-uk">One revision is included. The 48-hour delivery window starts when we have
+                everything we need from you.</span>
+              <span class="region-us">One revision is included. The delivery window starts when we have everything we
+                need from you.</span>
             </p>
           </div>
 
@@ -259,7 +266,8 @@
               <h2 class="text-xl md:text-2xl font-heading font-extrabold text-brand-dark tracking-tight mb-3">4.
                 Delivery Timeline</h2>
               <p class="text-zinc-600 leading-relaxed">
-                The <span class="font-semibold text-brand-dark">48-hour delivery window</span> begins once full payment
+                The <span class="font-semibold text-brand-dark region-uk">48-hour delivery window</span><span
+                  class="font-semibold text-brand-dark region-us">delivery window</span> begins once full payment
                 has been received and
                 all required information, branding and content have been provided by you. Delays caused by missing
                 information,
@@ -444,8 +452,13 @@
           <p class="text-[10px] font-black uppercase tracking-[0.2em] text-zinc-400 mb-4">Business</p>
           <ul class="space-y-2 text-[10px] font-bold uppercase tracking-widest text-zinc-600">
             <li><span class="text-zinc-500">Trading name:</span> <span class="ml-2">Signal Desk Labs</span></li>
-            <li><span class="text-zinc-500">VAT:</span> <span class="ml-2">Not VAT registered</span></li>
-            <li><span class="text-zinc-500">Type:</span> <span class="ml-2">Sole trader</span></li>
+            <li class="region-uk"><span class="text-zinc-500">VAT:</span> <span class="ml-2">Not VAT registered</span>
+            </li>
+            <li>
+              <span class="text-zinc-500">Type:</span>
+              <span class="ml-2 region-uk">Sole trader</span>
+              <span class="ml-2 region-us">Freelance Professional</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -466,8 +479,10 @@
       <div class="mt-8 space-y-3">
         <p
           class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
-          Disclaimer: The 48-hour delivery window begins once all required business information, branding and content
-          have been provided by the client.
+          <span class="region-uk">Disclaimer: The 48-hour delivery window begins once all required business information,
+            branding and content have been provided by the client.</span>
+          <span class="region-us">Disclaimer: The rapid delivery window begins once all required business information,
+            branding and content have been provided by the client.</span>
         </p>
         <p
           class="text-center text-[9px] font-medium text-zinc-700 max-w-3xl mx-auto leading-relaxed uppercase tracking-tighter">
