@@ -813,63 +813,88 @@
       <div class="max-w-4xl mx-auto px-6">
         <div class="bg-zinc-50 p-8 md:p-16 rounded-[4rem] border border-zinc-200 shadow-premium">
           <div class="mb-12">
-            <h3 class="text-4xl font-heading font-extrabold text-brand-dark uppercase tracking-tighter mb-4">Start Your
-              Build</h3>
-            <p class="text-zinc-500 font-medium">The more detail you provide, the faster we get you live.</p>
+            <h3 class="text-4xl font-heading font-extrabold text-brand-dark uppercase tracking-tighter mb-4">
+              Start Your Build
+            </h3>
+            <div class="flex flex-wrap gap-x-4 gap-y-2 mb-6">
+              <span
+                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                <span class="material-symbols-outlined text-sm">check_circle</span> Takes 60 seconds
+              </span>
+              <span
+                class="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-emerald-600 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-100">
+                <span class="material-symbols-outlined text-sm">payments</span> No payment required yet
+              </span>
+            </div>
+            <p class="text-zinc-500 font-medium step-1-text">The first step to your professional presence.</p>
+            <p class="text-zinc-500 font-medium step-2-text hidden">Almost there! Tell us about your business.</p>
           </div>
 
-          <form id="enquiryForm" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Your Name</label>
-              <input type="text" name="name" required
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
-                placeholder="Full Name">
-            </div>
-            <div class="space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Business Name</label>
-              <input type="text" name="business_name" required
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
-                placeholder="Business Name">
-            </div>
-            <div class="space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact Number</label>
-              <input type="tel" name="phone" required pattern="[0-9\s\+\-]*" inputmode="tel"
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
-                placeholder="Phone Number">
-            </div>
-            <div class="space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Target Region</label>
-              <select id="formRegionSelect" name="target_region" required
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none bg-white">
-                <option value="uk">🇬🇧 United Kingdom</option>
-                <option value="us">🇺🇸 United States</option>
-              </select>
-            </div>
-            <div class="space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact Email</label>
-              <input type="email" name="email" required
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
-                placeholder="Email Address">
-            </div>
-            <div class="md:col-span-2 space-y-2">
-              <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Detailed Business
-                Description</label>
-              <textarea name="description" rows="6" required
-                class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
-                placeholder="Tell us about what you do..."></textarea>
-            </div>
-            <!-- Anti-Spam Honeypot (Hidden from users) -->
-            <div class="hidden" aria-hidden="true">
-              <input type="text" name="website_honeypot" tabindex="-1" autocomplete="off">
-            </div>
-            <div class="md:col-span-2 pt-4">
-              <button type="submit" id="submitBtn" aria-label="Submit your build request to SDL"
+          <form id="enquiryForm" class="relative">
+            <!-- STEP 1: LEAD CAPTURE -->
+            <div id="step1" class="space-y-6 transition-all duration-300">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Your Name</label>
+                  <input type="text" name="name" id="userName" required
+                    class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
+                    placeholder="Full Name">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact
+                    Email</label>
+                  <input type="email" name="email" id="userEmail" required
+                    class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
+                    placeholder="Email Address">
+                </div>
+              </div>
+              <button type="button" onclick="nextStep()"
                 class="w-full bg-brand-dark text-brand-yellow py-6 rounded-2xl font-black text-xl uppercase tracking-tighter hover:scale-[1.01] transition-transform flex items-center justify-center gap-3">
-                Send Build Request <span class="material-symbols-outlined font-bold">arrow_forward</span>
+                Continue to Details <span class="material-symbols-outlined font-bold">arrow_forward</span>
               </button>
-              <p id="responseMsg" class="text-center text-sm font-bold mt-6 hidden"></p>
+            </div>
 
-              <div class="md:col-span-2 flex items-start gap-3 mt-2">
+            <!-- STEP 2: BUSINESS DETAILS -->
+            <div id="step2" class="hidden space-y-6 opacity-0 transition-all duration-500 transform translate-x-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Business
+                    Name</label>
+                  <input type="text" name="business_name" required
+                    class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
+                    placeholder="Business Name">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Contact Number
+                    (Optional)</label>
+                  <input type="tel" name="phone" pattern="[0-9\s\+\-]*" inputmode="tel"
+                    class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
+                    placeholder="Phone Number">
+                </div>
+                <div class="space-y-2">
+                  <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Target
+                    Region</label>
+                  <select id="formRegionSelect" name="target_region" required
+                    class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none bg-white">
+                    <option value="uk">🇬🇧 United Kingdom</option>
+                    <option value="us">🇺🇸 United States</option>
+                  </select>
+                </div>
+              </div>
+              <div class="space-y-2">
+                <label class="text-[10px] font-black uppercase tracking-widest text-zinc-400 ml-2">Detailed Business
+                  Description</label>
+                <textarea name="description" rows="6" required
+                  class="w-full px-6 py-4 rounded-xl border-zinc-200 focus:ring-brand-yellow focus:border-brand-yellow outline-none"
+                  placeholder="Tell us about what you do..."></textarea>
+              </div>
+
+              <!-- Anti-Spam Honeypot (Hidden from users) -->
+              <div class="hidden" aria-hidden="true">
+                <input type="text" name="website_honeypot" tabindex="-1" autocomplete="off">
+              </div>
+
+              <div class="flex items-start gap-3 mt-2">
                 <input id="agree" name="agree" type="checkbox" required class="mt-1">
                 <label for="agree" class="text-xs text-zinc-600 font-medium leading-relaxed">
                   I agree to the <a href="/terms.html" class="underline">Terms & Conditions</a> and
@@ -877,16 +902,28 @@
                 </label>
               </div>
 
+              <button type="submit" id="submitBtn" aria-label="Submit your build request to SDL"
+                class="w-full bg-brand-dark text-brand-yellow py-6 rounded-2xl font-black text-xl uppercase tracking-tighter hover:scale-[1.01] transition-transform flex items-center justify-center gap-3">
+                Send Build Request <span class="material-symbols-outlined font-bold">rocket_launch</span>
+              </button>
 
-              <!-- Added: fallback contact line due to no-cors -->
-              <p class="text-center text-xs text-zinc-400 mt-4 font-bold uppercase tracking-widest">
-                <span class="region-uk">If you don’t hear back within 1 hour, email:</span>
-                <span class="region-us">If you don’t hear back within business hours, email:</span>
-                <a class="text-brand-dark underline" href="mailto:signaldesklabs@gmail.com">signaldesklabs@gmail.com</a>
-              </p>
+              <button type="button" onclick="prevStep()"
+                class="w-full text-zinc-400 text-[10px] font-black uppercase tracking-widest hover:text-zinc-600 transition-colors">
+                ← Back to step 1
+              </button>
             </div>
-          </form>
+
+
+
+            <!-- Added: fallback contact line due to no-cors -->
+            <p class="text-center text-xs text-zinc-400 mt-4 font-bold uppercase tracking-widest">
+              <span class="region-uk">If you don’t hear back within 1 hour, email:</span>
+              <span class="region-us">If you don’t hear back within business hours, email:</span>
+              <a class="text-brand-dark underline" href="mailto:signaldesklabs@gmail.com">signaldesklabs@gmail.com</a>
+            </p>
         </div>
+        </form>
+      </div>
       </div>
     </section>
   </main>
@@ -1180,6 +1217,51 @@
       const savedRegion = localStorage.getItem('sdl_region') || 'uk';
       setRegion(savedRegion);
     });
+
+    // 2-Step Form Wizard Logic
+    function nextStep() {
+      const name = document.getElementById('userName');
+      const email = document.getElementById('userEmail');
+
+      if (!name.value || !email.validity.valid) {
+        alert("Please provide a valid name and email to continue.");
+        return;
+      }
+
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step1Text = document.querySelector('.step-1-text');
+      const step2Text = document.querySelector('.step-2-text');
+
+      step1.classList.add('opacity-0', '-translate-x-4');
+      setTimeout(() => {
+        step1.classList.add('hidden');
+        step2.classList.remove('hidden');
+        step1Text.classList.add('hidden');
+        step2Text.classList.remove('hidden');
+        setTimeout(() => {
+          step2.classList.remove('opacity-0', 'translate-x-4');
+        }, 50);
+      }, 300);
+    }
+
+    function prevStep() {
+      const step1 = document.getElementById('step1');
+      const step2 = document.getElementById('step2');
+      const step1Text = document.querySelector('.step-1-text');
+      const step2Text = document.querySelector('.step-2-text');
+
+      step2.classList.add('opacity-0', 'translate-x-4');
+      setTimeout(() => {
+        step2.classList.add('hidden');
+        step1.classList.remove('hidden');
+        step2Text.classList.add('hidden');
+        step1Text.classList.remove('hidden');
+        setTimeout(() => {
+          step1.classList.remove('opacity-0', '-translate-x-4');
+        }, 50);
+      }, 300);
+    }
   </script>
 
 </body>
